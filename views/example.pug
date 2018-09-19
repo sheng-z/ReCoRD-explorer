@@ -1,0 +1,36 @@
+extends layout
+
+block title
+  title ReCoRD Dataset
+
+block description
+  meta(name='description', content='The Reading comprehension with Common-sense Reasoning Dataset (ReCoRD) is a new reading comprehension dataset requiring common-sense reasoning. It consists of queries automatically generated from a set of news articles, where the answer to every query is a segment of text, or span, from a summarizing passage of the corresponding news article. With 120,000+ query-answer pairs on 50,000+ articles, REACHER is the largest reading comprehension dataset which requires common-sense reasoning.')
+
+block extralinks
+  link(rel='stylesheet', href='/stylesheets/example.css')
+
+block extrascripts
+  script(src='/javascripts/example.js')
+
+block content
+  .cover
+    .container
+      .row
+        .col-md-12
+          .infoCard
+            .infoBody
+              // h1#title #{example.title}
+              // h2#subtitle The Reading Comprehension with Common-sense Reasoning Dataset
+              // .infoHeadline 
+              //   h2 Passage
+              // | #{example.passage}  
+              // .infoHeadline
+              //   h2 Query
+              // | #{example.query}
+              h1#title ID: #{example_id}
+              h2#subtitle The Reading Comprehension with Common-sense Reasoning Dataset
+              br
+              br
+              p
+                != example_html
+
