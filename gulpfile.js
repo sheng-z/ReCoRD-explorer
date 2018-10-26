@@ -13,9 +13,7 @@ var path = require('path')
 var fs = require('fs')
 var cheerio = require('cheerio')
 
-var build_dir = 'my-explorer/' // good to have this be the same as the repo name for gh-pages purposes
-
-var exp = "<fieldset><legend id='context-title'>PASSAGE</legend> <div class='noselect' id='context' data-toggle='buttons'> <p><a class='btn entity correct-answer' onclick=enable_submit('Brendan&nbsp;Rodgers')><input id='answer' name='answer' value='0-0-15-Brendan Rodgers' type='radio' required=''/>Brendan Rodgers</a> believes <a class='btn entity' onclick=enable_submit('Thibaut&nbsp;Courtois')><input id='answer' name='answer' value='1-25-41-Thibaut Courtois' type='radio' required=''/>Thibaut Courtois</a> was the main reason <a class='btn entity' onclick=enable_submit('Chelsea')><input id='answer' name='answer' value='3-62-69-Chelsea' type='radio' required=''/>Chelsea</a> reached the <a class='btn entity' onclick=enable_submit('Capital&nbsp;One&nbsp;Cup')><input id='answer' name='answer' value='5-82-97-Capital One Cup' type='radio' required=''/>Capital One Cup</a> final after his <a class='btn entity correct-answer' onclick=enable_submit('Liverpool')><input id='answer' name='answer' value='7-114-123-Liverpool' type='radio' required=''/>Liverpool</a> side were dumped out after extra-time at <a class='btn entity' onclick=enable_submit('Stamford&nbsp;Bridge')><input id='answer' name='answer' value='9-165-180-Stamford Bridge' type='radio' required=''/>Stamford Bridge</a>. After a brilliant performance in the first leg at <a class='btn entity' onclick=enable_submit('Anfield')><input id='answer' name='answer' value='12-232-239-Anfield' type='radio' required=''/>Anfield</a>, <a class='btn entity' onclick=enable_submit('Courtois')><input id='answer' name='answer' value='1-241-249-Courtois' type='radio' required=''/>Courtois</a> kept a clean sheet as <a class='btn entity' onclick=enable_submit('Jose&nbsp;Mourinho')><input id='answer' name='answer' value='15-272-285-Jose Mourinho' type='radio' required=''/>Jose Mourinho</a>&#x27;s men advanced with a 1-0 victory (2-1 on aggregate) courtesy of <a class='btn entity' onclick=enable_submit('Branislav&nbsp;Ivanovic')><input id='answer' name='answer' value='20-351-369-Branislav Ivanovic' type='radio' required=''/>Branislav Ivanovic</a>&#x27;s header. <a class='btn entity' onclick=enable_submit('Rodgers')><input id='answer' name='answer' value='0-380-387-Rodgers' type='radio' required=''/>Rodgers</a> claimed his side were the better team over the two legs, despite failing to make it to <a class='btn entity' onclick=enable_submit('Wembley')><input id='answer' name='answer' value='25-475-482-Wembley' type='radio' required=''/>Wembley</a>. <a class='btn entity' onclick=enable_submit('Thibaut&nbsp;Courtois')><input id='answer' name='answer' value='1-484-500-Thibaut Courtois' type='radio' required=''/>Thibaut Courtois</a> (left) keeps the score level at 0-0 with a fine save from <a class='btn entity' onclick=enable_submit('Liverpool')><input id='answer' name='answer' value='7-559-568-Liverpool' type='radio' required=''/>Liverpool</a>&#x27;s <a class='btn entity' onclick=enable_submit('Alberto&nbsp;Moreno')><input id='answer' name='answer' value='27-571-585-Alberto Moreno' type='radio' required=''/>Alberto Moreno</a> <a class='btn entity' onclick=enable_submit('Brendan&nbsp;Rodgers')><input id='answer' name='answer' value='0-586-601-Brendan Rodgers' type='radio' required=''/>Brendan Rodgers</a> insists his side were the better team despite being knocked out by <a class='btn entity' onclick=enable_submit('Chelsea')><input id='answer' name='answer' value='3-669-676-Chelsea' type='radio' required=''/>Chelsea</a> over two legs </p> <ul class='highlights'> <li> <a class='btn entity' onclick=enable_submit('Chelsea')><input id='answer' name='answer' value='3-702-709-Chelsea' type='radio' required=''/>Chelsea</a> beat <a class='btn entity' onclick=enable_submit('Liverpool')><input id='answer' name='answer' value='7-715-724-Liverpool' type='radio' required=''/>Liverpool</a> 1-0 after extra-time (2-1 on aggregate) </li> <li> <a class='btn entity' onclick=enable_submit('Brendan&nbsp;Rodgers')><input id='answer' name='answer' value='0-776-791-Brendan Rodgers' type='radio' required=''/>Brendan Rodgers</a> heaped praise on <a class='btn entity' onclick=enable_submit('Chelsea')><input id='answer' name='answer' value='3-809-816-Chelsea' type='radio' required=''/>Chelsea</a> goalkeeper <a class='btn entity' onclick=enable_submit('Thibaut&nbsp;Courtois')><input id='answer' name='answer' value='1-828-844-Thibaut Courtois' type='radio' required=''/>Thibaut Courtois</a> </li> <li> The <a class='btn entity' onclick=enable_submit('Liverpool')><input id='answer' name='answer' value='7-860-869-Liverpool' type='radio' required=''/>Liverpool</a> boss believes his side were the better team over two legs </li> <li> <a class='btn entity' onclick=enable_submit('Rodgers')><input id='answer' name='answer' value='0-939-946-Rodgers' type='radio' required=''/>Rodgers</a> was unhappy with <a class='btn entity' onclick=enable_submit('Diego&nbsp;Costa')><input id='answer' name='answer' value='56-964-975-Diego Costa' type='radio' required=''/>Diego Costa</a>&#x27;s behaviour at <a class='btn entity' onclick=enable_submit('Stamford&nbsp;Bridge')><input id='answer' name='answer' value='9-991-1006-Stamford Bridge' type='radio' required=''/>Stamford Bridge</a></li> </ul> </div> </fieldset><br><br> <fieldset> <legend id='query-title'>QUERY </legend> <div class='noselect' id='query'>At <span class='placeholder-init' id='placeholder'>@placeholder</span> and here tonight he&#x27;s made very, very important saves and that&#x27;s won them the game. </div> </fieldset><br> <div id='hint'><span id='tips'>(Click to show the answers)<span></div><br><br> <div id='next-example'><a href='/' class='button'>Go to the next example &rarr;</a></div>"
+var build_dir = 'ReCoRD-explorer/' // good to have this be the same as the repo name for gh-pages purposes
 
 
 var rankEntries = function (entries) {
@@ -164,7 +162,7 @@ gulp.task('connect', function () {
 
 var dataset_folder = './dataset/'
 var filepaths = [
-  dataset_folder + 'dev-v1.1.json'
+  // dataset_folder + 'dev-v1.1.json'
   // dataset_folder + 'train-v1.1.json',
   // dataset_folder + 'dev-v1.0.json',
   // dataset_folder + 'train-v1.0.json'
@@ -231,7 +229,6 @@ json_examples.forEach(function (example) {
         return gulp.src('views/example.pug')
             .pipe(data(function () {
                 return {
-                    'example_id': example_id,
                     'example_html': example['html']
                 }
             }))
@@ -241,19 +238,6 @@ json_examples.forEach(function (example) {
 
     })
     example_tasks.push(name)
-})
-
-gulp.task('test_example', function () {
-  return gulp.src('views/example.pug')  
-      .pipe(data(function () {
-         return {
-           'example_id': 'TEST EXAMPLE',
-           'example_html': exp  
-         } 
-      }))
-      .pipe(pug())
-      .pipe(rename('test_example.html'))
-      .pipe(gulp.dest('./' + build_dir + 'examples/'))
 })
 
 gulp.task('process_comp_output', function (cb) {

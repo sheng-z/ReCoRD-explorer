@@ -20,8 +20,8 @@ mixin record_1_model_display(group, is_test)
       th Model
       th EM
       th F1
-    - var human_em = 90.831
-    - var human_f1 = 91.452
+    - var human_em = 91.31
+    - var human_f1 = 91.69
     - var largest_em = Math.max.apply(null, group.map(function (model) { return model.em; }))
     - var largest_f1 = Math.max.apply(null, group.map(function (model) { return model.f1; }))
       tr.human-row
@@ -29,7 +29,7 @@ mixin record_1_model_display(group, is_test)
         td
           | Human Performance
           p.institution Johns Hopkins University
-          a(href="http://arxiv.org/abs/1606.05250") (Zhang et al. '18)
+          a(href="/") (Zhang et al. '18)
         td #{human_em}
         td #{human_f1}
     each model in group
@@ -79,40 +79,37 @@ block content
                   | ataset (Re
                   span.record Co
                 |RD)  
-                | is a new reading comprehension dataset requiring common-sense reasoning. 
+                | is a large-scale reading comprehension dataset which requires common-sense reasoning.
                 | Re
                 span.record Co
                 | RD consists of queries automatically generated from CNN/Daily Mail news articles; 
-                | the answer to every query is a segment of text, or 
-                i span
-                | , from a summarizing passage of the corresponding news article.
+                | the answer to each query is a text span from a summarizing passage of the corresponding news article.
                 | The goal of Re
                 span.record Co
-                | RD is to evaluate the ability of machine to do common-sense reasoning in reading comprehension. 
+                | RD is to evaluate the machine's ability of common-sense reasoning in reading comprehension.
                 | Re
                 span.record Co
-                | RD is pronounced as /ˈɹɛk.ɚd/.
+                | RD is pronounced as [ˈrɛkərd].
               hr
               p
                 b Re
                   span.record Co
                   | RD 
-                | contains 120,000+ queries from 60,000+ news articles.
+                | contains 120,000+ queries from 70,000+ news articles.
                 | Each query has been validated by crowdworkers.
                 | Unlike existing reading comprehension datasets, Re
                 span.record Co
-                | RD contains a large portion (80%) of queries requiring common-sense
-                | reasoning, therefore showing a significant gap between human and machine reading comprehension. 
-              // a.btn.actionBtn(href="/explore/1.1/dev/") Explore SQuAD and model predictions
-              a.btn.actionBtn(href="http://arxiv.org/abs/1806.03822") Re
+                | RD contains a large portion of queries requiring common-sense
+                | reasoning, thus presenting a good challenge for future research to bridge the gap between human and ma-chine reading comprehension.
+              a.btn.actionBtn(href="/") Re
                 span.record Co
                 | RD paper (Zhang et al. '18)
               hr
               p
-                | Browse the examples in Re
+                | Browse examples in Re
                 span.record Co
                 | RD in a friendly way:
-              a.btn.actionBtn(href="/examples/0.html") Browse Re
+              a.btn.actionBtn(href="/examples/000.html") Browse Re
                 span.record Co
                 | RD
               .infoHeadline
@@ -121,27 +118,27 @@ block content
                 | We've built a few resources to help you get started with the dataset.
               p 
                 | Download a copy of the dataset in JSON format:
-                ul.list-unstyled
-                  li
-                    a.btn.actionBtn.inverseBtn(href="/dataset/train-v2.0.json", download)
-                      | Training Set (40 MB)
-                  li
-                    a.btn.actionBtn.inverseBtn(href="/dataset/dev-v2.0.json", download)
-                      | Dev Set (4 MB)
+              ul.list-unstyled
+                li
+                  a.btn.actionBtn.inverseBtn(href="/")
+                    | Training Set (251 MB)
+                li
+                  a.btn.actionBtn.inverseBtn(href="/")
+                    | Dev Set (28 MB)
               p To evaluate your models, we have also made available the evaluation script we will use for official evaluation, along with a sample prediction file that the script will take as input. To run the evaluation, use 
                 code
                   | python evaluate.py &lt;path_to_dev&gt; &lt;path_to_predictions&gt;
                 |.
                 ul.list-unstyled
                   li
-                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/", download)
+                    a.btn.actionBtn.inverseBtn(href="/")
                       | Evaluation Script
                   li
-                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/bundles/0x8731effab84f41b7b874a070e40f61e2/", download)
+                    a.btn.actionBtn.inverseBtn(href="/")
                       | Sample Prediction File
               p Once you have a built a model that works to your expectations on the dev set, you submit it to get official scores on the dev and a hidden test set. To preserve the integrity of test results, we do not release the test set to the public. Instead, we require you to submit your model so that we can run it on the test set for you. Here's a tutorial walking you through official evaluation of your model:
-              a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/worksheets/0x8212d84ca41c4150b555a075b19ccc05/")
-                | Submission Tutorial
+                a.btn.actionBtn.inverseBtn(href="/")
+                  | Submission Tutorial
               .infoHeadline
                 h2 License
               p Re
@@ -163,7 +160,7 @@ block content
                 h2 Have Questions?
               p 
                 | Ask us questions at our   
-                a(href="https://groups.google.com/forum/#!forum/squad-stanford-qa") google group
+                a(href="/") google group
                 |  or at 
                 a(href="mailto:zsheng2@jhu.edu") zsheng2@jhu.edu
                 | .
