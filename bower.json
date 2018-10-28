@@ -1,12 +1,12 @@
 {
-  "name": "my-explorer",
+  "name": "ReCoRD-explorer",
   "description": "",
   "main": "gulpfile.js",
   "authors": [
     "Sheng Zhang"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/sheng-z/my-explorer",
+  "homepage": "https://github.com/sheng-z/ReCoRD-explorer",
   "private": true,
   "ignore": [
     "**/.*",

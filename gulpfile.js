@@ -220,7 +220,7 @@ filepaths.forEach(function (filename) {
 })
 
 var example_tasks = []
-var example_file = './examples.json'
+var example_file = './dataset/examples.json'
 var json_examples = require(example_file)
 json_examples.forEach(function (example) {
     var example_id = example['id']
@@ -239,6 +239,13 @@ json_examples.forEach(function (example) {
     })
     example_tasks.push(name)
 })
+
+gulp.task('copy_data_readme', function (cb) {
+  return gulp.src('./dataset/readme.txt')
+        .pipe(rename('dataset-readme.txt'))
+        .pipe(gulp.dest('./' + build_dir))
+})
+
 
 gulp.task('process_comp_output', function (cb) {
   var jsonfile = require('jsonfile')
@@ -280,4 +287,4 @@ gulp.task('generate_exploration', exploration_tasks)
 gulp.task('generate_examples_1', example_tasks)
 gulp.task('generate', ['bower', 'generate_examples_1', 'generate_index', 'process_comp_output'])
 // gulp.task('generate', ['bower', 'generate_index', 'process_comp_output'])
-gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_dataset', 'copy_models'])
+gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_data_readme', 'copy_models'])
