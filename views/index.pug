@@ -1,7 +1,7 @@
 extends layout
 
 block title
-  title ReCoRD Dataset
+  title ReCoRD
 
 block description
   meta(name='description', content='The Reading comprehension with Common-sense Reasoning Dataset (ReCoRD) is a new reading comprehension dataset requiring common-sense reasoning. It consists of queries automatically generated from a set of news articles, where the answer to every query is a segment of text, or span, from a summarizing passage of the corresponding news article. With 120,000+ query-answer pairs on 50,000+ articles, REACHER is the largest reading comprehension dataset which requires common-sense reasoning.')
@@ -45,14 +45,14 @@ mixin record_1_model_display(group, is_test)
             a.link(href=model.link) #{model.link}
         td
           if model.em == largest_em
-            b #{model.em.toPrecision(5)}
+            b #{model.em.toPrecision(4)}
           else
-            | #{model.em.toPrecision(5)}
+            | #{model.em.toPrecision(4)}
         td
           if model.f1 == largest_f1
-            b #{model.f1.toPrecision(5)}
+            b #{model.f1.toPrecision(4)}
           else
-            | #{model.f1.toPrecision(5)}
+            | #{model.f1.toPrecision(4)}
 
 block content
   .cover#contentCover
@@ -120,11 +120,11 @@ block content
                 | Download a copy of the dataset in JSON format:
               ul.list-unstyled
                 li
-                  a.btn.actionBtn.inverseBtn(href="/")
-                    | Training Set (251 MB)
+                  a.btn.actionBtn.inverseBtn(href="https://drive.google.com/file/d/1PoHmphyH79pETNws8kU2OwuerU7SWLHj/view?usp=sharing")
+                    | Training Set (217 MB)
                 li
-                  a.btn.actionBtn.inverseBtn(href="/")
-                    | Dev Set (28 MB)
+                  a.btn.actionBtn.inverseBtn(href="https://drive.google.com/file/d/1WNaxBpXEGgPbymTzyN249P4ub-uU5dkO/view?usp=sharing")
+                    | Dev Set (24 MB)
               P Read the following Readme to get familiar with the data structure.
               ul.list-unstyled
                 li
