@@ -5,14 +5,14 @@ fieldset {
   border: 2px solid #062964;
 }
 #context-title {
-  font-size: x-large;
+  font-size: 2vw;
   margin-bottom: -5px;
   border-bottom: unset;
   width: unset;
 }
 #context {
   text-align: justify;
-  font-size: large;
+  font-size: 1.5vw;
 }
 .btn:hover {
   color: #4caf50;
@@ -20,7 +20,7 @@ fieldset {
 }
 /* Entity span */
 .entity {
-  font-size: large;
+  font-size: 1.5vw;
   background-color: inherit;
   padding: 0px 0px;
   cursor: pointer;
@@ -45,27 +45,27 @@ fieldset {
   margin-bottom: -5px;
   border-bottom: unset;
   width: unset;
-  font-size: x-large;
+  font-size: 2vw;
 }
 #query {
-  font-size: large;
+  font-size: 1.5vw;
   text-align: justify;
 }
 .placeholder-init {
-  font-size: large;
+  font-size: 1.5vw;
   font-weight: bold;
   color: #cb4b16;
 }
 .placeholder {
   background-color: #4caf50;
   color: #fff;
-  font-size: large;
+  font-size: 1.5vw;
   font-weight: bold;
   border-radius: 4px;
 }
 #hint {
   cursor: pointer;
-  font-size: x-large;
+  font-size: 2vw;
   color: #666;
   padding-left: 5px;
 }
@@ -73,5 +73,5 @@ fieldset {
   padding-right: 5px;
   text-decoration: underline;
   text-align: right;
-  font-size: x-large;
+  font-size: 2vw;
 }
