@@ -7,14 +7,19 @@ fieldset
     border 2px solid #062964
     
 #context-title
-    font-size x-large
+    font-size large
+    @media (min-width: 600px)
+        font-size x-large
     margin-bottom -5px
     border-bottom unset
     width unset
 
 #context
   text-align justify
-  font-size large
+  font-size 12px
+  @media (min-width: 600px)
+    font-size large
+
 
 .btn
     &:hover
@@ -23,7 +28,9 @@ fieldset
       
 /* Entity span */
 .entity
-  font-size large
+  font-size 12px
+  @media (min-width: 600px)
+    font-size large
   //border none
   background-color inherit
   padding 0px 0px
@@ -48,27 +55,37 @@ fieldset
   margin-bottom -5px
   border-bottom unset
   width unset
-  font-size x-large  
-  
+  font-size large
+  @media (min-width: 600px)
+    font-size x-large
+
 #query
-    font-size large
-    text-align justify  
+    font-size 12px
+    @media (min-width: 600px)
+      font-size large
+    text-align justify
   
 .placeholder-init
-    font-size large
+    font-size 12px
+    @media (min-width: 600px)
+      font-size large
     font-weight bold
     color #CB4B16  
   
 .placeholder
     background-color #4CAF50
     color white
-    font-size large
+    font-size 12px
+    @media (min-width: 600px)
+      font-size large
     font-weight bold
     border-radius 4px  
   
 #hint
   cursor pointer
-  font-size x-large 
+  font-size large
+  @media (min-width: 600px)
+    font-size x-large
   color #666666
   padding-left 5px
   
@@ -76,5 +93,7 @@ fieldset
   padding-right 5px
   text-decoration underline
   text-align right
-  font-size x-large 
-  
+  font-size large
+  @media (min-width: 600px)
+    font-size x-large
+

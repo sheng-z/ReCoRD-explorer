@@ -29,7 +29,7 @@ mixin record_1_model_display(group, is_test)
         td
           | Human Performance
           p.institution Johns Hopkins University
-          a(href="/") (Zhang et al. '18)
+          a(href="https://arxiv.org/pdf/1810.12885.pdf") (Zhang et al. '18)
         td #{human_em}
         td #{human_f1}
     each model in group
@@ -72,7 +72,7 @@ block content
                   b Co
                   |mprehension with 
                   b Co
-                  | mmon-sense  
+                  | mmonsense 
                   b R
                   | easoning 
                   b D
@@ -100,8 +100,8 @@ block content
                 | Unlike existing reading comprehension datasets, Re
                 span.record Co
                 | RD contains a large portion of queries requiring commonsense
-                | reasoning, thus presenting a good challenge for future research to bridge the gap between human and ma-chine reading comprehension.
-              a.btn.actionBtn(href="/") Re
+                | reasoning, thus presenting a good challenge for future research to bridge the gap between human and machine commonsense reading comprehension.
+              a.btn.actionBtn(href="https://arxiv.org/pdf/1810.12885.pdf") Re
                 span.record Co
                 | RD paper (Zhang et al. '18)
               hr

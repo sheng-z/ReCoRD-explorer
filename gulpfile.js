@@ -246,6 +246,10 @@ gulp.task('copy_data_readme', function (cb) {
         .pipe(gulp.dest('./' + build_dir))
 })
 
+gulp.task('copy_eval_script', function (cb) {
+    return gulp.src('./dataset/evaluation.py')
+        .pipe(gulp.dest('./' + build_dir))
+})
 
 gulp.task('process_comp_output', function (cb) {
   var jsonfile = require('jsonfile')
@@ -287,4 +291,4 @@ gulp.task('generate_exploration', exploration_tasks)
 gulp.task('generate_examples_1', example_tasks)
 gulp.task('generate', ['bower', 'generate_examples_1', 'generate_index', 'process_comp_output'])
 // gulp.task('generate', ['bower', 'generate_index', 'process_comp_output'])
-gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_data_readme', 'copy_models'])
+gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_data_readme', 'copy_eval_script', 'copy_models'])
