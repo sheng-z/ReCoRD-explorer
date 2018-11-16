@@ -1,0 +1,53 @@
+{
+    "max_submissions_per_period": 5,
+    "max_submissions_total": 20,
+    "host": "https://worksheets.codalab.org",
+    "submission_tag": "ReCoRD-1.0-test-submit",
+    "log_worksheet_uuid": "0x266fa495b88d4af6b97df755b93bd28a",
+    "allow_multiple_models": true,
+    "predict": {
+        "mimic": [
+            {
+                "old": "0x1e117845425647a7bb55ea1a0c1d6353",
+                "new": "0x56716b97976f4a94ba01405f21d12fb3"
+            }
+        ],
+        "depth": 10,
+        "tag": "ReCoRD-1.0-test-predict"
+    },
+    "evaluate": {
+        "dependencies": [
+            {
+                "parent_uuid": "0x3a68fdba58a54983960819f25a087906",
+                "child_path": "evaluate.py"
+            },
+            {
+                "parent_uuid": "0x1e117845425647a7bb55ea1a0c1d6353",
+                "child_path": "dev.json"
+            },
+            {
+                "parent_uuid": "{predict}",
+                "parent_path": "",
+                "child_path": "predictions.json"
+            }
+        ],
+        "command": "python evaluate.py dev.json predictions.json",
+        "metadata": {
+          "request_docker_image": "codalab/ubuntu:1.9"
+        },
+        "tag": "ReCoRD-1.0-test-eval"
+    },
+    "score_specs": [
+        {
+            "name": "f1",
+            "key": "/stdout:f1"
+        },
+        {
+            "name": "exact_match",
+            "key": "/stdout:exact_match"
+        }
+    ],
+    "metadata": {
+        "name": "ReCoRD Competition Leaderboard"
+    }
+}
