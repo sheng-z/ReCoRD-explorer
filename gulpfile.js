@@ -43,37 +43,65 @@ function assert (condition, message) {
   }
 }
 
-var parseCompEntries = function (comp_file) {
-  var leaderboard = require(comp_file).leaderboard
+var parseCompEntries = function (comp_files) {
   var entries = []
-
-  for (var i = 0; i < leaderboard.length; i++) {
-    try {
-      var o_entry = leaderboard[i]
-      var entry = {}
-      entry.user = o_entry.submission.user_name
-      var description = o_entry.submission.description.trim()
-      entry.model_name = description.substr(0, description.lastIndexOf('(')).trim()
-      var firstPart = description.substr(description.lastIndexOf('(') + 1)
-      entry.institution = firstPart.substr(0, firstPart.lastIndexOf(')'))
-      if (description.lastIndexOf('http') !== -1) {
-        entry.link = description.substr(description.lastIndexOf('http')).trim()
-      }
-      entry.date = o_entry.submission.created
-      entry.em = parseFloat(o_entry.scores.exact_match)
-      entry.f1 = parseFloat(o_entry.scores.f1)
-      if (!(entry.em >= 0)) throw 'Score invalid'
-      // if (entry.em < 50) throw 'Score too low'
-      if (entry.model_name === '') {
-        entry.model_name = 'Unnamed submission by ' + entry.user
-      }
-      // if (entry.em > 50 && entry.f1 > 60) {
-      entries.push(entry)
-    } catch (err) {
-      console.error(err)
-      console.error(entry)
+  for (var j = 0; j < comp_files.length; j++) {
+    var leaderboard = require(comp_files[j]).leaderboard
+    for (var i = 0; i < leaderboard.length; i++) {
+        try {
+            var o_entry = leaderboard[i]
+            var entry = {}
+            entry.user = o_entry.submission.user_name
+            var description = o_entry.submission.description.trim()
+            entry.model_name = description.substr(0, description.lastIndexOf('(')).trim()
+            var firstPart = description.substr(description.lastIndexOf('(') + 1)
+            entry.institution = firstPart.substr(0, firstPart.lastIndexOf(')'))
+            if (description.lastIndexOf('http') !== -1) {
+                entry.link = description.substr(description.lastIndexOf('http')).trim()
+            }
+            entry.date = o_entry.submission.created
+            entry.em = parseFloat(o_entry.scores.exact_match)
+            entry.f1 = parseFloat(o_entry.scores.f1)
+            if (!(entry.em >= 0)) throw 'Score invalid'
+            // if (entry.em < 50) throw 'Score too low'
+            if (entry.model_name === '') {
+                entry.model_name = 'Unnamed submission by ' + entry.user
+            }
+            // if (entry.em > 50 && entry.f1 > 60) {
+            entries.push(entry)
+        } catch (err) {
+            console.error(err)
+            console.error(entry)
+        }
     }
   }
+  // for (var i = 0; i < leaderboard.length; i++) {
+  //   try {
+  //     var o_entry = leaderboard[i]
+  //     var entry = {}
+  //     entry.user = o_entry.submission.user_name
+  //     var description = o_entry.submission.description.trim()
+  //     entry.model_name = description.substr(0, description.lastIndexOf('(')).trim()
+  //     var firstPart = description.substr(description.lastIndexOf('(') + 1)
+  //     entry.institution = firstPart.substr(0, firstPart.lastIndexOf(')'))
+  //     if (description.lastIndexOf('http') !== -1) {
+  //       entry.link = description.substr(description.lastIndexOf('http')).trim()
+  //     }
+  //     entry.date = o_entry.submission.created
+  //     entry.em = parseFloat(o_entry.scores.exact_match)
+  //     entry.f1 = parseFloat(o_entry.scores.f1)
+  //     if (!(entry.em >= 0)) throw 'Score invalid'
+  //     // if (entry.em < 50) throw 'Score too low'
+  //     if (entry.model_name === '') {
+  //       entry.model_name = 'Unnamed submission by ' + entry.user
+  //     }
+  //     // if (entry.em > 50 && entry.f1 > 60) {
+  //     entries.push(entry)
+  //   } catch (err) {
+  //     console.error(err)
+  //     console.error(entry)
+  //   }
+  // }
   entries = rankEntries(entries)
   return entries
 }
@@ -253,7 +281,8 @@ gulp.task('copy_eval_script', function (cb) {
 
 gulp.task('process_comp_output', function (cb) {
   var jsonfile = require('jsonfile')
-  var entries1 = parseCompEntries('./baseline/results.json')
+  var comp_files = ['./codalab/output/out-v1.0.json', './baseline/results.json']
+  var entries1 = parseCompEntries(comp_files)
   jsonfile.writeFile('./baseline.json', entries1, cb)
 })
 

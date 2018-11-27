@@ -3,6 +3,7 @@ my-explorer/
 .publish/
 bower_components/
 *.DS_Store
+*.icloud
 
 development.json
 

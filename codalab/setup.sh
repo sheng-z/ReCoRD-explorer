@@ -171,6 +171,6 @@ then
 
     printf "=====> (4) Please wait util all the asynchronous commands are done, and then run the following commands to automate evaluation on the test set.\n"
     printf "cd ${codalab_cli_repo}\n"
-    printf "python ./scripts/competitiond.py -v ${record_repo}/codalab/config/ReCoRD-v1.0.json ${record_repo}/codalab/output/out-v1.0.json\n"
+    printf "python ./scripts/competitiond.py -v ${record_repo}/codalab/config/codalab-v1.0.json ${record_repo}/codalab/output/out-v1.0.json\n"
 
 fi

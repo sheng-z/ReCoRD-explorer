@@ -4,7 +4,7 @@ block title
   title ReCoRD
 
 block description
-  meta(name='description', content='The Reading comprehension with Commonsense Reasoning Dataset (ReCoRD) is a new reading comprehension dataset requiring commonsense reasoning. It consists of queries automatically generated from a set of news articles, where the answer to every query is a segment of text, or span, from a summarizing passage of the corresponding news article. With 120,000+ query-answer pairs on 50,000+ articles, REACHER is the largest reading comprehension dataset which requires commonsense reasoning.')
+  meta(name='description', content='The Reading comprehension with Commonsense Reasoning Dataset (ReCoRD) is a new reading comprehension dataset requiring commonsense reasoning. It consists of queries automatically generated from a set of news articles, where the answer to every query is a text span, from a summarizing passage of the corresponding news article.')
 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/index.css')
@@ -139,10 +139,10 @@ block content
                     a.btn.actionBtn.inverseBtn(href="/evaluation.py")
                       | Evaluation Script
                   li
-                    a.btn.actionBtn.inverseBtn(href="/")
+                    a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/bundles/0x082bda8870fc43f99c4aedb93bfa146e/")
                       | Sample Prediction File
               p Once you have a built a model that works to your expectations on the dev set, you submit it to get official scores on the dev and a hidden test set. To preserve the integrity of test results, we do not release the test set to the public. Instead, we require you to submit your model so that we can run it on the test set for you. Here's a tutorial walking you through official evaluation of your model:
-                a.btn.actionBtn.inverseBtn(href="/")
+                a.btn.actionBtn.inverseBtn(href="https://worksheets.codalab.org/worksheets/0x683ccf06dbe34c0384465f861020f917/")
                   | Submission Tutorial
               .infoHeadline
                 h2 License
@@ -155,7 +155,7 @@ block content
                     a(href="https://github.com/deepmind/rc-data") CNN/Daily Mail dataset 
                     | are under 
                     a(href="https://github.com/deepmind/rc-data/blob/master/LICENSE") Apache 
-                    | license. 
+                    | license.
                   li Passages and queries crawled from 
                     a(href="https://archive.org/") Internet Archive 
                     | are subject to the 
@@ -165,7 +165,7 @@ block content
                 h2 Have Questions?
               p
                 | Ask us questions at our 
-                a(href="https://groups.google.com/forum/#!forum/record-qa") google group
+                a(href="https://groups.google.com/forum/#!forum/record-qa") google group 
                 |  or at
                 a(href="mailto:zsheng2@jhu.edu") zsheng2@jhu.edu
                 | .
