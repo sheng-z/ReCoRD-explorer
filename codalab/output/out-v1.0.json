@@ -66,6 +66,166 @@
     "leaderboard": [
         {
             "bundle": {
+                "args": "run evaluate.py:0x6b674ed880a4430298f40be050f68b9d data.json:0x11d7cb1b08b142a3a3b185d086cc43ef predictions.json:0xb0e7ab0b48e5486f94b3cf11d01972ba \"python evaluate.py data.json predictions.json\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py data.json predictions.json",
+                "data_hash": "0x8bfa43b7d719590af39012096aebfba9f2fbb890",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x44844ff8507e4a77a8b406c675be52fb",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x6b674ed880a4430298f40be050f68b9d"
+                    },
+                    {
+                        "child_path": "data.json",
+                        "child_uuid": "0x44844ff8507e4a77a8b406c675be52fb",
+                        "parent_name": "test-v1.0.json",
+                        "parent_path": "",
+                        "parent_uuid": "0x11d7cb1b08b142a3a3b185d086cc43ef"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x44844ff8507e4a77a8b406c675be52fb",
+                        "parent_name": "an_yang-predictions-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xb0e7ab0b48e5486f94b3cf11d01972ba"
+                    }
+                ],
+                "id": "0x44844ff8507e4a77a8b406c675be52fb",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1550330974,
+                    "data_size": 4151,
+                    "description": "{\"submit_id\": \"0x93a5f99e917e4cd58a3cf9d872c537e9\", \"predict_id\": \"0xb0e7ab0b48e5486f94b3cf11d01972ba\", \"submitter_id\": \"0x9af981377baf449b832ac7706edf4173\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1550332768,
+                    "name": "an_yang-predictions-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1550332747,
+                    "tags": [
+                        "recocord-1.0-test-eval"
+                    ],
+                    "time": 14.6418809891
+                },
+                "owner": {
+                    "id": "0x3e1d2b38d404470da79465002cc81025",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x44844ff8507e4a77a8b406c675be52fb"
+            },
+            "scores": {
+                "exact_match": 73.01,
+                "f1": 74.75833320370883
+            },
+            "submission": {
+                "created": 1547213261,
+                "description": "Knowledge-enhanced BERT (single model) (Anonymous) ",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "an_yang"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x6b674ed880a4430298f40be050f68b9d data.json:0x11d7cb1b08b142a3a3b185d086cc43ef predictions.json:0x4e26321c0d5f4959808b0c914ea999d0 \"python evaluate.py data.json predictions.json\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py data.json predictions.json",
+                "data_hash": "0xcf3dfa83619b9077116dfbae96e5cb7738d28761",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xe4202ff824db4e3bb43a25211c0fde5a",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x6b674ed880a4430298f40be050f68b9d"
+                    },
+                    {
+                        "child_path": "data.json",
+                        "child_uuid": "0xe4202ff824db4e3bb43a25211c0fde5a",
+                        "parent_name": "test-v1.0.json",
+                        "parent_path": "",
+                        "parent_uuid": "0x11d7cb1b08b142a3a3b185d086cc43ef"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xe4202ff824db4e3bb43a25211c0fde5a",
+                        "parent_name": "jose_xia-predictions-DCReader-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x4e26321c0d5f4959808b0c914ea999d0"
+                    }
+                ],
+                "id": "0xe4202ff824db4e3bb43a25211c0fde5a",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1543501097,
+                    "data_size": 4151,
+                    "description": "{\"submit_id\": \"0xbc570d206f0b4d858fab3b30269e484c\", \"predict_id\": \"0x4e26321c0d5f4959808b0c914ea999d0\", \"submitter_id\": \"0x4a2f3898ff794aca92a2f96443da48ba\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1543502437,
+                    "name": "jose_xia-predictions-DCReader-results",
+                    "remote": "vm-clws-prod-worker-2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1543502411,
+                    "tags": [
+                        "recocord-1.0-test-eval"
+                    ],
+                    "time": 11.0271880627
+                },
+                "owner": {
+                    "id": "0x3e1d2b38d404470da79465002cc81025",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xe4202ff824db4e3bb43a25211c0fde5a"
+            },
+            "scores": {
+                "exact_match": 70.49,
+                "f1": 71.98075396825412
+            },
+            "submission": {
+                "created": 1543487152,
+                "description": "DCReader+BERT (single model) (Anonymous)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "jose_xia"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x6b674ed880a4430298f40be050f68b9d data.json:0x11d7cb1b08b142a3a3b185d086cc43ef predictions.json:0x747b38bc06b54d94aef129abff064bae \"python evaluate.py data.json predictions.json\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py data.json predictions.json",
@@ -145,5 +305,5 @@
             }
         }
     ],
-    "updated": 1543331607.967664
+    "updated": 1550334118.644426
 }
