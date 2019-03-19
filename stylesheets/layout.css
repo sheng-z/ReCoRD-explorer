@@ -259,6 +259,16 @@
   color: #666;
   font-size: 1.6em;
 }
+#ulNews {
+  padding-inline-start: 30px;
+}
+#Newsdate {
+  border-radius: 3px;
+  background: #0754ac;
+  color: #fff;
+  padding-right: 3px;
+  padding-left: 3px;
+}
 .actionBtn:hover {
   background-color: #042966;
   border-color: #042966;
