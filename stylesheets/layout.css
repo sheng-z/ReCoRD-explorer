@@ -259,10 +259,10 @@
   color: #666;
   font-size: 1.6em;
 }
-#ulNews {
+.ulNews {
   padding-inline-start: 30px;
 }
-#Newsdate {
+.Newsdate {
   border-radius: 3px;
   background: #0754ac;
   color: #fff;
