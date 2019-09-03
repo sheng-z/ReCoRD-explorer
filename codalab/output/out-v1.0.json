@@ -139,7 +139,87 @@
                 "created": 1563620373,
                 "description": "XLNet + MTL + Verifier (ensemble) (PingAn Smart Health & SJTU)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 2,
+                "num_total_submissions": 3,
+                "public": false,
+                "user_name": "ginobili"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x6b674ed880a4430298f40be050f68b9d data.json:0x11d7cb1b08b142a3a3b185d086cc43ef predictions.json:0x1b06f32d42b941dfb0a2c8669bb62c81 \"python evaluate.py data.json predictions.json\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py data.json predictions.json",
+                "data_hash": "0x3dd6212e11e8a15049e1042c0c67c40d38e2f03d",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xb4f61dd259ed40a0857f1265be31967b",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x6b674ed880a4430298f40be050f68b9d"
+                    },
+                    {
+                        "child_path": "data.json",
+                        "child_uuid": "0xb4f61dd259ed40a0857f1265be31967b",
+                        "parent_name": "test-v1.0.json",
+                        "parent_path": "",
+                        "parent_uuid": "0x11d7cb1b08b142a3a3b185d086cc43ef"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xb4f61dd259ed40a0857f1265be31967b",
+                        "parent_name": "ginobili-predictions-record-single-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x1b06f32d42b941dfb0a2c8669bb62c81"
+                    }
+                ],
+                "id": "0xb4f61dd259ed40a0857f1265be31967b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1566758157,
+                    "data_size": 4151,
+                    "description": "{\"submit_id\": \"0xfce2edd646c34a9fba4c3c9cf6827d58\", \"predict_id\": \"0x1b06f32d42b941dfb0a2c8669bb62c81\", \"submitter_id\": \"0xb7d0e7cec6d146579b59b12158d44b50\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1566764461,
+                    "name": "ginobili-predictions-record-single-results",
+                    "remote": "vm-clws-prod-gpuworker-4",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1566764426,
+                    "tags": [
+                        "recocord-1.0-test-eval"
+                    ],
+                    "time": 23.9752800465
+                },
+                "owner": {
+                    "id": "0x3e1d2b38d404470da79465002cc81025",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xb4f61dd259ed40a0857f1265be31967b"
+            },
+            "scores": {
+                "exact_match": 81.46,
+                "f1": 82.66441269841283
+            },
+            "submission": {
+                "created": 1563615687,
+                "description": "XLNet + MTL + Verifier (single model) (PingAn Smart Health & SJTU)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 3,
                 "public": false,
                 "user_name": "ginobili"
             }
@@ -219,7 +299,7 @@
                 "created": 1562734586,
                 "description": "CSRLM (single model) (Anonymous)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 2,
+                "num_total_submissions": 3,
                 "public": false,
                 "user_name": "ginobili"
             }
@@ -625,5 +705,5 @@
             }
         }
     ],
-    "updated": 1565408975.474083
+    "updated": 1567545941.223903
 }
