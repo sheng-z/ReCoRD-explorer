@@ -139,7 +139,7 @@
             },
             "submission": {
                 "created": 1585240230,
-                "description": "LUKE (single model) (Anonymous)",
+                "description": "LUKE (single model) (Studio Ousia & NAIST & RIKEN AIP)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
@@ -787,5 +787,5 @@
             }
         }
     ],
-    "updated": 1585707243.714974
+    "updated": 1585881575.296572
 }
