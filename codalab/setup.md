@@ -169,6 +169,24 @@ cl edit predictions-${model_name} --tags ${submit_tag}
 Run the following command to start the evaluation.
 
 ```bash
-cd ${codalab_cli_repo}
-python ./scripts/competitiond.py -v ${record_repo}/codalab/config/ReCoRD-v1.0.json ${record_repo}/codalab/output/out-v1.0.json
+# If the command doesn't work, pull the latest codalab-cli, check out the latest tag,
+# and install the latest version via `pip install -e .`. 
+# The latest codalab-cli: https://github.com/codalab/codalab-worksheets/tree/master
+cd ${codalab_cli_repo}  # codalab_cli_repo=codalab-cli
+python ./scripts/competitiond.py -v ../config/codalab-v1.0.json out-v1.0.json
+```
+
+Check the codalab worksheet. Once the evaluation is done, run the above command again and copy the output file:
+
+```bash
+cd ${codalab_cli_repo}  # codalab_cli_repo=codalab-cli
+python ./scripts/competitiond.py -v ../config/codalab-v1.0.json out-v1.0.json
+cp out-v1.0.json ../output/ 
+```
+
+Assuming `gulp` is installed, go back to the root (i.e. the explorer dir) and update the leaderboard.
+```bash
+cd ..
+gulp
+gulp connect    # Compare the new leaderboard to the existing one.
 ```
